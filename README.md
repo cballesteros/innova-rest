@@ -24,5 +24,5 @@ npm install
 
 Run server
 ```
-set DEBUG=myapp:* & npm start
+set DEBUG=innova-rest:* & npm start
 ```

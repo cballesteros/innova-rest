@@ -8,7 +8,9 @@ Requisities
 * ExpressJS (latest version)
 
 Clone repo
-```git clone https://github.com/cballesteros/innova-rest.git```
+```
+git clone https://github.com/cballesteros/innova-rest.git
+```
 
 Go to directory
 ```
@@ -16,7 +18,11 @@ cd innova-rest
 ```
 
 Install dependencies
-```npm install```
+```
+npm install
+```
 
 Run server
-```set DEBUG=myapp:* & npm start```
+```
+set DEBUG=myapp:* & npm start
+```

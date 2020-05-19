@@ -14,6 +14,17 @@ const connection = {
     password: '25428506'
 };
 
-const dbInstance = pgp(connection); // database instance;
+const connectionString = process.env.DATABASE_URL;
 
-module.exports = dbInstance;
+const dbInstance = pgp(connectionString); // database instance;
+
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+//module.exports = dbInstance;
+module.exports = pool;

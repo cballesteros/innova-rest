@@ -16,8 +16,8 @@ const connection = {
 
 const connectionString = process.env.DATABASE_URL;
 
-//const dbInstance = pgp(connectionString); // database instance;
-const dbInstance = pgp(connection); // database instance;
+const dbInstance = pgp(connectionString); // database instance;
+//const dbInstance = pgp(connection); // database instance;
 
 const { Pool } = require('pg');
 const pool = new Pool({

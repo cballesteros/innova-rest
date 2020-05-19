@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'innOVA' });
 });
 
-router.get('/db', (req, res, next) {
+router.get('/db', (req, res, next) => {
   dbInstance.any('SELECT * FROM public.\"test_table\"')
       .then(data => {
           res.status(200)

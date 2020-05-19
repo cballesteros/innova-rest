@@ -11,7 +11,7 @@ const connection = {
     port: 5432, // 5432 is the default;
     database: 'innova',
     user: 'postgres', // 'postgres' is the default
-    password: 'TYPE_YOUR_DB_PASSWORD'
+    password: '25428506'
 };
 
 const dbInstance = pgp(connection); // database instance;

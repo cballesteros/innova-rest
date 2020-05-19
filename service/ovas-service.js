@@ -31,7 +31,29 @@ function getAllOvas(req, res, next) {
         });
 }
 
+function searchOVA(req, res, next) {
+    let searchString = req.params.query;
+    dbInstance.any('SELECT * FROM public.\"OVAS\" WHERE '+
+        '"TITLE" ILIKE %$1% OR' +
+        '"SUBJECT" ILIKE %$1% OR' +
+        '"DESCRIPTION" ILIKE %$1% OR' +
+        '"ALTERNATIVE" ILIKE %$1}% OR' +
+        '"EDUCATION_LEVEL" ILIKE %$1%', searchString)
+        .then(data => {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    data: data,
+                    message: 'Retrieved all OVAS matching with ' + searchString
+                });
+            })
+        .catch(error => {
+            return next(error);
+        });
+}
+
 module.exports = {
     getAllOvas: getAllOvas,
-    register: register
+    register: register,
+    searchOVA: searchOVA
 };

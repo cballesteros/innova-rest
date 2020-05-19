@@ -26,5 +26,5 @@ const pool = new Pool({
   }
 });
 
-//module.exports = dbInstance;
-module.exports = pool;
+module.exports = dbInstance;
+//module.exports = pool;
